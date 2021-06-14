@@ -1,0 +1,26 @@
+base:
+  project : "Salary_Prediction"
+  random_state: 0
+  target: jobsalary
+
+data_source:
+  gdrive_source: Scraped_data/job_listings.csv
+
+load_data:
+  raw_data_csv: data/raw/listings.csv
+
+cleaned_data:
+  cleaned_data_csv: data/cleaned/listings.csv
+
+split_data: 
+  train_path: data/processed/train.csv
+  test_path: data/processed/test.csv
+  test_size: 0.2
+
+model_dir: saved_models
+
+report:
+  params: report/params.json
+  scores: report/scores.json
+
+webapp_model_dir: prediction/model/model.joblib
