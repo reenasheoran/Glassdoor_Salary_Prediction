@@ -22,4 +22,4 @@ if __name__ == "__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", default='params.yaml')
     args_parsed = args.parse_args()
-    data = get_data(config_path=args_parsed.config)
+    get_data(config_path=args_parsed.config)
