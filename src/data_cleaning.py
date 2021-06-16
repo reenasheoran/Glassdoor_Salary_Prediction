@@ -21,7 +21,7 @@ def data_clean(config_path):
     df['avg_salary'] = (df.min_salary+df.max_salary)/2
 
     #Company 
-    df['Company']=df['Company Name']
+    df['Company'] = df.apply(lambda x: x['Company Name'] if x['Rating'] <0 else x['Company Name'][:-3], axis = 1)
     
     #state  
     df['State'] = df['Location'].apply(lambda x: x.split(',')[1])
