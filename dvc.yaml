@@ -1,0 +1,16 @@
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - src/load_data.py
+    - Scraped_data/job_listings.csv
+    outs:
+    - data/raw/listings.csv
+  
+  clean_data:
+    cmd: python src/data_cleaning.py --config=params.yaml
+    deps:
+    - src/data_cleaning.py
+    - data/raw/listings.csv
+    outs:
+    - data/cleaned/final_data.csv

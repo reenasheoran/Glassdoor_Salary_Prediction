@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: Scraped_data/job_listings.csv
+      md5: 3cf7036abc55d9f70cf8498f97024951
+      size: 3835251
+    - path: src/load_data.py
+      md5: 2064dc5b1de00865e6ca98b1b29c0775
+      size: 727
+    outs:
+    - path: data/raw/listings.csv
+      md5: d0c3312653157741331455f4995319f4
+      size: 3836286
+  clean_data:
+    cmd: python src/data_cleaning.py --config=params.yaml
+    deps:
+    - path: data/raw/listings.csv
+      md5: d0c3312653157741331455f4995319f4
+      size: 3836286
+    - path: src/data_cleaning.py
+      md5: a1efaafac5994006e7c87520ce24430f
+      size: 2662
+    outs:
+    - path: data/cleaned/final_data.csv
+      md5: c018914b96342449b3462b5b9394ee57
+      size: 3088803

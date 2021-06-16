@@ -10,7 +10,7 @@ load_data:
   raw_data_csv: data/raw/listings.csv
 
 cleaned_data:
-  cleaned_data_csv: data/cleaned/listings.csv
+  cleaned_data_csv: data/cleaned/final_data.csv
 
 split_data: 
   train_path: data/processed/train.csv
