@@ -1,7 +1,7 @@
 base:
   project : "Salary_Prediction"
-  random_state: 0
-  target: jobsalary
+  random_state: 42
+  target: avg_salary
 
 data_source:
   gdrive_source: Scrape_zone/job_listings.csv
@@ -11,6 +11,9 @@ load_data:
 
 cleaned_data:
   cleaned_data_csv: data/cleaned/final_data.csv
+
+EDA_data:
+  eda_data_csv: data/eda/eda_data.csv
 
 split_data: 
   train_path: data/processed/train.csv
