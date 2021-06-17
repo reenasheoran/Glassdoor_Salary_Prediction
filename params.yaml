@@ -4,7 +4,7 @@ base:
   target: jobsalary
 
 data_source:
-  gdrive_source: Scraped_data/job_listings.csv
+  gdrive_source: Scrape_zone/job_listings.csv
 
 load_data:
   raw_data_csv: data/raw/listings.csv
