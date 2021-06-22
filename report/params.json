@@ -1,0 +1,4 @@
+{
+    "criterion": "mae",
+    "n_estimators": 220
+}

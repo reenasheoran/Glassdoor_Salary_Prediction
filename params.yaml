@@ -20,6 +20,13 @@ split_data:
   test_path: data/processed/test.csv
   test_size: 0.2
 
+estimators:
+  RandomForest:
+    params:
+      criterion: 'mae'
+      n_estimators: 220
+     
+
 model_dir: saved_models
 
 report:
