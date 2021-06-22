@@ -14,3 +14,12 @@ stages:
     - data/raw/listings.csv
     outs:
     - data/cleaned/final_data.csv
+  
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - data/eda/eda_data.csv
+    - src/split_data.py
+    outs:
+    - data/processed/train.csv
+    - data/processed/test.csv

@@ -26,3 +26,19 @@ stages:
     - path: data/cleaned/final_data.csv
       md5: afc072e0bf43fb005cc2ddc5f968cdbb
       size: 3086610
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/eda/eda_data.csv
+      md5: c0ef2395e2350dcf09122455a4ae2bbd
+      size: 276052
+    - path: src/split_data.py
+      md5: 416ed9a730df5936f8338d10b5eef1a9
+      size: 976
+    outs:
+    - path: data/processed/test.csv
+      md5: c078f1d46d3e9cfe9592a46dd48a1c33
+      size: 58712
+    - path: data/processed/train.csv
+      md5: 076b5ca8e87054f029c4ff01c4da4440
+      size: 221439
